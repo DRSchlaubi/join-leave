@@ -1,4 +1,4 @@
-name: Spigot template
+name: join_leave
 author: Mik
 version: @version@
-main: org.example.spigot_template.SpigotTemplate
+main: me.schlaubi.join_leave.JoinLeavePlugin

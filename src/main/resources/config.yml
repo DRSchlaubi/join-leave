@@ -1,0 +1,3 @@
+messages:
+  join: '%player% joined the server'
+  leave: '%player% left the server'

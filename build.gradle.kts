@@ -15,15 +15,14 @@ val spigotPluginsDir: String? by project
 repositories {
     mavenCentral()
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots")
-    // mavenLocal() // if you need NMS
 }
 
 dependencies {
+    compileOnly("org.jetbrains", "annotations", "19.0.0")
     compileOnly("org.spigotmc", "spigot-api", "1.16.1-R0.1-SNAPSHOT")
 }
 
 tasks {
-    // If you open resources/plugins.yml you will see "@version@" as the version this code replaces this
     processResources {
         from(sourceSets["main"].resources) {
             val tokens = mapOf("version" to version)
@@ -37,6 +36,6 @@ tasks {
         dependsOn(jar)
         from(jar)
         include("*.jar")
-        into(spigotPluginsDir ?: error("Please set spigotPluginsDir in gradle.properties"))
+        into(spigotPluginsDir)
     }
 }
